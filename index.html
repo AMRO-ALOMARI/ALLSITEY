@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allsitey OS</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-container {
+            padding: 50px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-weight: normal;
+            letter-spacing: 7px;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #888;
+            letter-spacing: 3px;
+            font-size: 14px;
+            margin-top: 0;
+        }
+        
+        /* Placeholder for other content to preserve the idea of adding a section */
+        .content-placeholder {
+             border-top: 1px solid #333;
+             border-bottom: 1px solid #333;
+             padding: 100px 0;
+             margin: 50px 0;
+        }
+
+        .content-placeholder p {
+            color: #555;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <header>
+            <h1>ALLSITEY</h1>
+            <p>WE DO NOT RECRUIT. WE OBSERVE.</p>
+        </header>
+
+        <div class="content-placeholder">
+            <p>// THE EYE ALREADY KNOWS YOU</p>
+        </div>
+
+    </div>
+
+    <!-- User's provided registration form -->
+    <div style="background-color: #000; color: #fff; font-family: 'Courier New', monospace; padding: 50px; text-align: center; border-top: 1px solid #333;">
+    
+        <h2 style="font-weight: normal; letter-spacing: 5px; font-size: 14px; margin-bottom: 40px; color: #888;">
+            SYSTEM ACCESS // PUBLIC CHANNEL
+        </h2>
+    
+        <div style="max-width: 500px; margin: 0 auto; border: 1px solid #222; padding: 40px; position: relative;">
+            <div style="position: absolute; top: -1px; left: -1px; width: 10px; height: 10px; border-top: 2px solid #fff; border-left: 2px solid #fff;"></div>
+            <div style="position: absolute; bottom: -1px; right: -1px; width: 10px; height: 10px; border-bottom: 2px solid #fff; border-right: 2px solid #fff;"></div>
+    
+            <p style="margin-bottom: 30px; font-size: 12px; color: #aaa; line-height: 1.6;">
+                THE OS IS IN PRIVATE BETA.<br>
+                SATR LANGUAGE COMPILER IS COMPILING.<br>
+                ENTER YOUR FREQUENCY TO RECEIVE THE SIGNAL.
+            </p>
+    
+            <form action="#" method="POST" onsubmit="handleFormSubmit(event)">
+                <input type="email" placeholder="ENTER_COMMUNICATION_ID (EMAIL)" required 
+                       style="width: 100%; box-sizing: border-box; background: #050505; border: 1px solid #333; color: #fff; padding: 15px; font-family: 'Courier New'; margin-bottom: 20px; outline: none; letter-spacing: 1px;">
+                
+                <button type="submit" 
+                        style="background: transparent; border: 1px solid #fff; color: #fff; padding: 10px 40px; font-family: 'Courier New'; letter-spacing: 2px; cursor: pointer; transition: all 0.3s;"
+                        onmouseover="this.style.background='#fff'; this.style.color='#000'"
+                        onmouseout="this.style.background='transparent'; this.style.color='#fff'">
+                    TRANSMIT
+                </button>
+            </form>
+            <div id="form-response" style="margin-top: 20px; font-size: 12px; color: #aaa; line-height: 1.6; display: none;"></div>
+        </div>
+    </div>
+
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const responseContainer = document.getElementById('form-response');
+            
+            // Hide form elements
+            form.querySelector('input').style.display = 'none';
+            form.querySelector('button').style.display = 'none';
+            form.querySelector('p').style.display = 'none';
+
+            // Show terminal-style response
+            responseContainer.style.display = 'block';
+            
+            const message = "> SIGNAL RECEIVED.\n> ID LOGGED IN SECURE DATABASE.\n> YOU ARE NOW UNDER OBSERVATION.\n> AWAIT FURTHER INSTRUCTIONS.";
+            
+            let i = 0;
+            responseContainer.innerHTML = ''; // Clear previous content
+            function typeWriter() {
+                if (i < message.length) {
+                    if (message.charAt(i) === '\\n') { // Corrected escape sequence for newline within a string literal
+                        responseContainer.innerHTML += '<br>';
+                    } else {
+                        responseContainer.innerHTML += message.charAt(i);
+                    }
+                    i++;
+                    setTimeout(typeWriter, 50);
+                }
+            }
+            typeWriter();
+        }
+    </script>
+
+</body>
+</html>
